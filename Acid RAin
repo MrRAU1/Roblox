@@ -1,0 +1,17 @@
+while true do
+	local rN1 = math.random(1 , 100)
+	local rN2 = math.random(1 , 304)
+	local rN3 = math.random(0 , 100)
+	wait()
+	local Rain = Instance.new("Part" , game.Workspace)
+	Rain.Position =Vector3.new(rN1,rN3, rN2)
+	Rain.Size = Vector3.new(0.5 , 2 , 0.5)
+	Rain.Anchored = false
+	Rain.Color= Color3.new(1, 0.0666667, 0)
+	Rain.Transparency = 0.5
+	Rain.Touched :Connect(function (hit)
+		if hit.Parent:FindFirstChild("Humanoid") then
+			hit.Parent.Humanoid.Health = 0
+		end
+	end)
+end
